@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "123435845514",
+    "firebase_url": "https://pocketsprinter-54f15.firebaseio.com",
+    "project_id": "pocketsprinter-54f15",
+    "storage_bucket": "pocketsprinter-54f15.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:123435845514:android:fd0e1e512b1524d1",
+        "android_client_info": {
+          "package_name": "com.westproject.boot3.pocketsprinter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "123435845514-sv8ai3qbk6oh1covc757poc46nclohob.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.westproject.boot3.pocketsprinter",
+            "certificate_hash": "b161709d89bc91a5f5b7cfb7a42d060aa93b2ca7"
+          }
+        },
+        {
+          "client_id": "123435845514-ajcs2mjpievj6cp74d55pol3bp6n0uuj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4uVm8e1jdGPKLlu6cmmqVXh1PIMZ9DBE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "123435845514-ajcs2mjpievj6cp74d55pol3bp6n0uuj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
