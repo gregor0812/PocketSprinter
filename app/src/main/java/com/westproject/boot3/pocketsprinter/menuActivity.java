@@ -18,16 +18,16 @@ import android.widget.TextView;
 
 public class menuActivity extends AppCompatActivity {
 
-    private static final String TAG = "menuActivity";
-
     private CalendarView mCalenderView;
+
+    private static final String TAG = "menuActivity";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mainmenu);
-        mCalenderView = (CalendarView) findViewById(R.id.calendarView);
 
+        mCalenderView = (CalendarView) findViewById(R.id.calendarView);
         mCalenderView.setOnDateChangeListener(new CalendarView.OnDateChangeListener(){
 
             @Override
