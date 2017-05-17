@@ -58,7 +58,7 @@ public class loginActivity extends AppCompatActivity implements
         findViewById(R.id.to_menu_button).setOnClickListener(this);
         // Declare options to declare what parts of the google API you want to make use of.
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(loginActivity.this.getResources().getString(R.string.default_web_client_id))
+                .requestIdToken(loginActivity.this.getResources().getString(R.string.server_client_id))
                 .requestEmail()
                 .build();
         //Create the actual client to connect to the google API with the options declared above.
@@ -75,7 +75,7 @@ public class loginActivity extends AppCompatActivity implements
                 signIn();
                 break;
             case R.id.to_menu_button:
-                Intent intent = new Intent(loginActivity.this, menuActivity.class );
+                Intent intent = new Intent(loginActivity.this, runningActivity.class);
                 startActivity(intent);
         }
     }
@@ -110,6 +110,7 @@ public class loginActivity extends AppCompatActivity implements
             //If login was not successful
             } else {
                 Log.d(TAG,"ERROR");
+                Log.d(TAG, String.valueOf(RC_SIGN_IN) + result.getStatus());
             }
         }
     }
