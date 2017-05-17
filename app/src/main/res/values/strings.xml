@@ -2,5 +2,125 @@
     <string name="app_name">PocketSprinter</string>
     <string name="signed_in_fmt">reee%</string>
     <string name="server_client_id">123435845514-f6a10fn7k0vlslki1npt6viigoaun4a1.apps.googleusercontent.com</string>
+    <string name="back_label">«</string>
+    <string name="forth_label">»</string>
+    <string name="start">Start</string>
+    <string name="pause">Pause</string>
+    <string name="workout_total">Workout Total</string>
+    <string name="visit_pad_blog">PAD 3 Blog</string>
+    <string name="PAD3_link">https://pad572.wordpress.com/</string>
 
+    <string name="warmup_label">Warm Up</string>
+    <string name="walk_label">Walk</string>
+    <string name="jog_label">Jog</string>
+
+    <string-array name="workoutTitles">
+        <item>Week 1 Day 1</item>
+        <item>Week 1 Day 2</item>
+        <item>Week 1 Day 3</item>
+        <item>Week 2 Day 1</item>
+        <item>Week 2 Day 2 </item>
+        <item>Week 2 Day 3</item>
+        <item>Week 3 Day 1</item>
+        <item>Week 3 Day 2</item>
+        <item>Week 3 Day 3</item>
+        <item>Week 4 Day 1</item>
+        <item>Week 4 Day 2</item>
+        <item>Week 4 Day 3</item>
+        <item>Week 5 Day 1</item>
+        <item>Week 5 Day 2</item>
+        <item>Week 5 Day 3</item>
+        <item>Week 6 Day 1</item>
+        <item>Week 6 Day 2</item>
+        <item>Week 6 Day 3</item>
+        <item>Week 7 Day 1</item>
+        <item>Week 7 Day 2</item>
+        <item>Week 7 Day 3</item>
+        <item>Week 8 Day 1</item>
+        <item>Week 8 Day 2</item>
+        <item>Week 8 Day 3</item>
+        <item>Week 9 Day 1</item>
+        <item>Week 9 Day 2</item>
+        <item>Week 9 Day 3</item>
+    </string-array>
+    <string-array name="workoutDescriptions">
+        <item>Week 1 Day 1 Five-minute warmup walk. Then alternate 60 seconds of jogging and 90 seconds of walking for a total of 20 minutes.</item>
+        <item>Week 1 Day 2 Five-minute warmup walk. Then alternate 60 seconds of jogging and 90 seconds of walking for a total of 20 minutes.</item>
+        <item>Week 1 Day 3 Five-minute warmup walk. Then alternate 60 seconds of jogging and 90 seconds of walking for a total of 20 minutes.</item>
+        <item>Week 2 Day 1 Five-minute warmup walk. Then alternate 90 seconds of jogging and two minutes of walking for a total of 20 minutes.</item>
+        <item>Week 2 Day 2 Five-minute warmup walk. Then alternate 90 seconds of jogging and two minutes of walking for a total of 20 minutes.</item>
+        <item>Week 2 Day 3 Five-minute warmup walk. Then alternate 90 seconds of jogging and two minutes of walking for a total of 20 minutes.</item>
+        <item>Week 3 Day 1 Five-minute warmup walk, then do two repetitions of the following:&lt;br/>
+        • Jog 90 seconds&lt;br/>
+        • Walk 90 seconds&lt;br/>
+        • Jog three minutes&lt;br/>
+        • Walk three minutes</item>
+        <item>Week 3 Day 2 Five-minute warmup walk, then do two repetitions of the following:&lt;br/>
+        • Jog 90 seconds&lt;br/>
+        • Walk 90 seconds&lt;br/>
+        • Jog three minutes&lt;br/>
+        • Walk three minutes</item>
+        <item>Week 3 Day 3 Five-minute warmup walk, then do two repetitions of the following:&lt;br/>
+        • Jog 90 seconds&lt;br/>
+        • Walk 90 seconds&lt;br/>
+        • Jog three minutes&lt;br/>
+        • Walk three minutes</item>
+        <item>Week 4 Day 1 Five-minute warmup walk, then:&lt;br/>
+        • Jog 3 minutes&lt;br/>
+        • Walk 90 seconds&lt;br/>
+        • Jog 5 minutes&lt;br/>
+        • Walk 2-1/2 minutes&lt;br/>
+        • Jog 3 minutes&lt;br/>
+        • Walk 90 seconds&lt;br/>
+        • Jog 5 minutes</item>
+        <item>Week 4 Day 2 Five-minute warmup walk, then:&lt;br/>
+        • Jog 3 minutes&lt;br/>
+        • Walk 90 seconds&lt;br/>
+        • Jog 5 minutes&lt;br/>
+        • Walk 2-1/2 minutes&lt;br/>
+        • Jog 3 minutes&lt;br/>
+        • Walk 90 seconds&lt;br/>
+        • Jog 5 minutes</item>
+        <item>Week 4 Day 3 Five-minute warmup walk, then:&lt;br/>
+        • Jog 3 minutes&lt;br/>
+        • Walk 90 seconds&lt;br/>
+        • Jog 5 minutes&lt;br/>
+        • Walk 2-1/2 minutes&lt;br/>
+        • Jog 3 minutes&lt;br/>
+        • Walk 90 seconds&lt;br/>
+        • Jog 5 minutes</item>
+        <item>Week 5 Day 1 Five-minute warmup walk, then:&lt;br/>
+        • Jog 5 minutes&lt;br/>
+        • Walk 3 minutes&lt;br/>
+        • Jog 5 minutes&lt;br/>
+        • Walk 3 minutes&lt;br/>
+        • Jog 5 minutes</item>
+        <item>Week 5 Day 2 Five-minute warmup walk, then:&lt;br/>
+        • Jog 8 minutes&lt;br/>
+        • Walk 5 minutes&lt;br/>
+        • Jog 8 minutes</item>
+        <item>Week 5 Day 3 Five-minute warmup walk, then jog 20 minutes with no walking.</item>
+        <item>week 6 Day 1 Five-minute warmup walk, then:&lt;br/>
+        • Jog 5 minutes&lt;br/>
+        • Walk 3 minutes&lt;br/>
+        • Jog 8 minutes&lt;br/>
+        • Walk 3 minutes&lt;br/>
+        • Jog 5 minutes</item>
+        <item>Week 6 Day 2 Five-minute warmup walk, then:&lt;br/>
+        • Jog 10 minutes&lt;br/>
+        • Walk 3 minutes&lt;br/>
+        • Jog 10 minutes</item>
+        <item>Week 6 Day 3 Five-minute warmup walk, then jog 22 minutes with no walking.</item>
+        <item>Week 7 Day 1 Five-minute warmup walk, then jog 25 minutes.</item>
+        <item>Week 7 Day 2 Five-minute warmup walk, then jog 25 minutes.</item>
+        <item>Week 7 Day 3 Five-minute warmup walk, then jog 25 minutes.</item>
+        <item>Week 8 Day 1 Five-minute warmup walk, then jog 28 minutes.</item>
+        <item>Week 8 Day 2 Five-minute warmup walk, then jog 28 minutes.</item>
+        <item>Week 8 Day 3 Five-minute warmup walk, then jog 28 minutes.</item>
+        <item>Week 9 Day 1 Five-minute warmup walk, then jog 30 minutes.</item>
+        <item>Week 9 Day 2 Five-minute warmup walk, then jog 30 minutes.</item>
+        <item>The final workout! Five-minute warmup walk, then jog 30 minutes.</item>
+    </string-array>
 </resources>
+
+

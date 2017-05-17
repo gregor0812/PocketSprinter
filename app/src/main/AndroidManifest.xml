@@ -3,6 +3,7 @@
     package="com.westproject.boot3.pocketsprinter">
 
     <application
+        android:name=".CrashReport"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -17,6 +18,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".menuActivity" />
+        <activity android:name=".runningActivity" />
     </application>
+    <uses-permission android:name="android.permission.VIBRATE"/>
 
 </manifest>

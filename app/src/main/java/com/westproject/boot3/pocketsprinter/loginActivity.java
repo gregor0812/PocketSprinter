@@ -11,7 +11,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -28,21 +27,17 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
-
 public class loginActivity extends AppCompatActivity implements
         GoogleApiClient.OnConnectionFailedListener,
         View.OnClickListener {
 
-
     private GoogleApiClient mGoogleApiClient;
     private TextView theDate;
-
     private ProgressDialog mProgressDialog;
     private FirebaseAuth mAuth;
 
     private static final String TAG = "loginActivity";
     private static final int RC_SIGN_IN = 0001;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,22 +45,21 @@ public class loginActivity extends AppCompatActivity implements
         setContentView(R.layout.activity_login);
         Log.d(TAG, "onCreate: Started.");
 
-        //Drawables
+        //Drawables and assets.
         ImageView frontpage = (ImageView) findViewById(R.id.FrontPage);
         int imageResource = getResources().getIdentifier("@drawable/frontpicture",null, this.getPackageName());
         frontpage.setImageResource(imageResource);
-
-        //firebase
+        //Firebase authentication
         mAuth = FirebaseAuth.getInstance();
         //Views
+        //TODO 02: Do something with date.
         theDate = (TextView) findViewById(R.id.date);
-
-        //Listeners for buttons
+        //Button Listeners
         findViewById(R.id.sign_in_button).setOnClickListener(this);
         findViewById(R.id.to_menu_button).setOnClickListener(this);
         // Declare options to declare what parts of the google API you want to make use of.
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(loginActivity.this.getResources().getString(R.string.default_web_client_id))
+                .requestIdToken(loginActivity.this.getResources().getString(R.string.server_client_id))
                 .requestEmail()
                 .build();
         //Create the actual client to connect to the google API with the options declared above.
@@ -74,99 +68,73 @@ public class loginActivity extends AppCompatActivity implements
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
     }
-    //Method for handling cases for different buttons
+    //OnClick method for buttons
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.sign_in_button:
+                Log.d(TAG, "onClick case sign_in_button started.");
                 signIn();
                 break;
             case R.id.to_menu_button:
-                Intent intent = new Intent(loginActivity.this, menuActivity.class );
+                Log.d(TAG, "onClick case to_menu_button started.");
+                Intent intent = new Intent(loginActivity.this, menuActivity.class);
                 startActivity(intent);
-
         }
-
     }
-    //Method  for signing in
+
+    //TODO 01: Move signing in unto a thread.
+    //Method  for signing in and redirecting to the google API
     private void signIn() {
+        Log.d(TAG, "signIn() started.");
         Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
-    //If no connection can be made
+
+    //On connection failed logging
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-        Log.d(TAG,"Connection Failed");
-
+        Log.d(TAG,"Connection Failed, are you sure you are connected to internet?");
 
     }
 
-    // Return result from signIn()
+    //Process the login that is returned from Google.
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
         if (requestCode == RC_SIGN_IN) {
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
             Log.d(TAG, String.valueOf(RC_SIGN_IN)+result.getStatus());
+            //If login was successful
             if(result.isSuccess()){
                 GoogleSignInAccount account = result.getSignInAccount();
                 firebaseAuthWithGoogle(account);
-                Log.d(TAG,"SUCCESS");
+                Log.d(TAG,"Successfully connected to the google server, attempting to link to firebase");
+            //If login was not successful
             } else {
                 Log.d(TAG,"ERROR");
+                Log.d(TAG, String.valueOf(RC_SIGN_IN) + result.getStatus());
             }
         }
     }
 
-
-    // [START auth_with_google]
-    private void handleSignInResult(GoogleSignInResult result) {
-        Log.d(TAG, "handleSignInResult:" + result.isSuccess());
-        if (result.isSuccess()) {
-            // Signed in successfully, show authenticated UI.
-            GoogleSignInAccount acct = result.getSignInAccount();
-            firebaseAuthWithGoogle(acct);
-
-
-
-        } else {
-
-            // Signed out, show unauthenticated UI.
-
-          //  updateUI(false);
-
-        }
-
-    }
-
+    //Method for updating the screen if login was successful.
     private void updateUI(FirebaseUser user) {
+        Log.d(TAG, "updateUI started.");
 
         if (user != null) {
-
-
             SignInButton loginBtn= (SignInButton) findViewById(R.id.sign_in_button);
             loginBtn.setVisibility(View.GONE);
-
             findViewById(R.id.to_menu_button).setVisibility(View.VISIBLE);
-
         } else {
-
-            //     mStatusTextView.setText(R.string.signed_out);
-
-
             findViewById(R.id.sign_in_button).setVisibility(View.VISIBLE);
-
             findViewById(R.id.to_menu_button).setVisibility(View.GONE);
-
         }
-
     }
 
+    //This method links the Google account with the backend database
     private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
-        Log.d(TAG, "firebaseAuthWithGoogle"+ acct.getId());
-
-
+        Log.d(TAG, "firebaseAuthWithGoogle"+" "+ acct.getId());
         AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(),null);
         mAuth.signInWithCredential(credential)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -176,6 +144,8 @@ public class loginActivity extends AppCompatActivity implements
                             Log.d(TAG, "SignInWithCredential:Success");
                             FirebaseUser user = mAuth.getCurrentUser();
                             updateUI(user);
+                            Intent intent = new Intent(loginActivity.this, menuActivity.class);
+                            startActivity(intent);
                         } else {
                             Log.w(TAG, "SignWithCredential:failure", task.getException());
                             updateUI(null);
@@ -186,3 +156,4 @@ public class loginActivity extends AppCompatActivity implements
 
 
 }
+

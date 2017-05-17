@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/Pad3_website"
+        android:title="@string/visit_pad_blog"
+        android:alphabeticShortcut="w" />
+</menu>
