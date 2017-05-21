@@ -3,7 +3,12 @@ package com.westproject.boot3.pocketsprinter;
 import android.content.Context;
 import android.util.Log;
 
-
+/**
+ * Created by Gregor on 17/05/2017.
+ * This class provides the application with challenges that get
+ * progressively harder each week.
+ * Descriptions are found in Resources/Values/Strings.xml
+ */
 public class Challenge {
     private final Workout[] workouts;
     private static final String TAG = "Challenge";
@@ -254,7 +259,7 @@ public class Challenge {
                 S(Type.JOG, 1800)};
         
         workoutSegmentLength = new Segment[][]{
-                //*/testWorkout, /*
+                testWorkout,
                 week1, //*/
                 week1,
                 week1,

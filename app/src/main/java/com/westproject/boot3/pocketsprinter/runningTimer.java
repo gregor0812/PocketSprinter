@@ -6,6 +6,11 @@ import android.os.SystemClock;
 
 import java.lang.ref.WeakReference;
 
+/**
+ * Created by Gregor on 17/05/2017.
+ * This class handles the actual running timer for the runningActivity
+ */
+
 public abstract class runningTimer {
     public abstract void onTick(long millisUntilFinished);
 

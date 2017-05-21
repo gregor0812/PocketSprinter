@@ -38,6 +38,7 @@ public class menuActivity extends AppCompatActivity {
 
         mCalenderView = (CalendarView) findViewById(R.id.calendarView);
 
+
         mCalenderView.setOnDateChangeListener(new CalendarView.OnDateChangeListener(){
 
             @Override

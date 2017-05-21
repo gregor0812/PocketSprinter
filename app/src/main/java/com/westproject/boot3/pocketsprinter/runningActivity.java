@@ -24,6 +24,12 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
 
+/*
+* This activity provides the screen where the run timer is displayed. It also provides progress bars
+* and navigation functionality through the challenges provided.
+
+ */
+
 public class runningActivity extends AppCompatActivity {
     private static final String WORKOUT_IDX = "com.louiswins.joggingtimer.workoutCatalog";
     private static final String TAG = "runningActivity";

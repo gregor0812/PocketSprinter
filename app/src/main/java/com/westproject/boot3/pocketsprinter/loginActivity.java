@@ -27,6 +27,11 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
+/*
+This activity provides the login and reigstration through third party authentication.
+The account is also linked to the database from here.
+ */
+
 public class loginActivity extends AppCompatActivity implements
         GoogleApiClient.OnConnectionFailedListener,
         View.OnClickListener {
@@ -156,4 +161,6 @@ public class loginActivity extends AppCompatActivity implements
 
 
 }
+
+
 

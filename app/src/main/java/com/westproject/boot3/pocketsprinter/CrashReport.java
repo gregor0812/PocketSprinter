@@ -6,6 +6,9 @@ import android.util.Log;
 
 /**
  * Created by Gregor on 17/05/2017.
+ * This class provides a user with a prompt to send an error long whenever the application crashes
+ * It extends the application and handles any uncaught exception by sending a full crash log
+ * to Mikey0812@gmail.com
  */
 
 

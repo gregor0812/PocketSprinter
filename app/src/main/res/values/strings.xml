@@ -15,6 +15,7 @@
     <string name="jog_label">Jog</string>
 
     <string-array name="workoutTitles">
+        <item>Test Workout</item>
         <item>Week 1 Day 1</item>
         <item>Week 1 Day 2</item>
         <item>Week 1 Day 3</item>
@@ -44,6 +45,7 @@
         <item>Week 9 Day 3</item>
     </string-array>
     <string-array name="workoutDescriptions">
+        <item>Dit is een test workout</item>
         <item>Week 1 Day 1 Five-minute warmup walk. Then alternate 60 seconds of jogging and 90 seconds of walking for a total of 20 minutes.</item>
         <item>Week 1 Day 2 Five-minute warmup walk. Then alternate 60 seconds of jogging and 90 seconds of walking for a total of 20 minutes.</item>
         <item>Week 1 Day 3 Five-minute warmup walk. Then alternate 60 seconds of jogging and 90 seconds of walking for a total of 20 minutes.</item>
