@@ -153,7 +153,7 @@ public class Challenge {
 
     //The workouts
     static {
-        Segment[] testWorkout = {S(Type.WARMUP, 10), S(Type.JOG, 8), S(Type.WALK, 8), S(Type.JOG, 8)};
+        Segment[] testWorkout = {S(Type.WARMUP, 2), S(Type.JOG, 2), S(Type.WALK, 2), S(Type.JOG, 2)};
 
         Segment[] week1 = {
                 S(Type.WARMUP, 300),

@@ -7,7 +7,6 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,7 +19,6 @@ import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.gms.vision.text.Text;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -40,6 +38,7 @@ public class loginActivity extends AppCompatActivity implements
     private TextView theDate;
     private ProgressDialog mProgressDialog;
     private FirebaseAuth mAuth;
+    public static String userUID;
 
     private static final String TAG = "loginActivity";
     private static final int RC_SIGN_IN = 0001;
@@ -151,15 +150,21 @@ public class loginActivity extends AppCompatActivity implements
                             updateUI(user);
                             Intent intent = new Intent(loginActivity.this, menuActivity.class);
                             startActivity(intent);
+                            userUID = user.getUid();
+
                         } else {
                             Log.w(TAG, "SignWithCredential:failure", task.getException());
                             updateUI(null);
+
                         }
                     }
+
                 });
     }
 
-
+    public static String getUserUID() {
+        return userUID;
+    }
 }
 
 

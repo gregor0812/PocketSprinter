@@ -6,7 +6,7 @@ import android.util.Log;
 
 /**
  * Created by Gregor on 17/05/2017.
- * This class provides a user with a prompt to send an error long whenever the application crashes
+ * This class provides a userUID with a prompt to send an error long whenever the application crashes
  * It extends the application and handles any uncaught exception by sending a full crash log
  * to Mikey0812@gmail.com
  */
@@ -30,7 +30,7 @@ public class CrashReport extends Application {
         });
     }
 
-    //Prompt user to send an email to mikey0812@gmail.com when an error occurs.
+    //Prompt userUID to send an email to mikey0812@gmail.com when an error occurs.
     public void handleUncaughtException (Thread thread, Throwable e)
     {
         String stackTrace = Log.getStackTraceString(e);
