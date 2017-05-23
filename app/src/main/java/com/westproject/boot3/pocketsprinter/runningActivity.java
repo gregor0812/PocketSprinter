@@ -11,7 +11,6 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Vibrator;
-import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
@@ -81,6 +80,7 @@ public class runningActivity extends AppCompatActivity implements SensorEventLis
     private TextView tvStepCount;
     boolean activityRunning;
     String userID;
+    int newValue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -253,14 +253,14 @@ public class runningActivity extends AppCompatActivity implements SensorEventLis
                     segmentIdx = 0;
                     setUpTimerForCurrentSegment();
                     Log.d(TAG, loginActivity.getUserUID());
-                    // saveData();
+                     saveData();
 
                     myRef.addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
                             // This method is called once with the initial value and again
                             // whenever data at this location is updated.
-                            showData(dataSnapshot);
+                        //    showData(dataSnapshot);
 
 
                         }
@@ -285,17 +285,24 @@ public class runningActivity extends AppCompatActivity implements SensorEventLis
     }
 
     private void saveData() {
+        User user = new User();
 
-        Punten user = new Punten();
-        user.setPunten(5);
-        myRef.child(userID).child("Punten").setValue(user);
+                newValue = newValue + 100;
+                user.setPunten(newValue);
+            myRef.child(userID).child("Punten").setValue(user);
+
     }
 
     private void showData(DataSnapshot dataSnapshot) {
         for (DataSnapshot ds : dataSnapshot.getChildren()) {
-            Punten user = new Punten();
-            Log.d(TAG, "C5y8MPEXHCVTyvscirCsUCTeQlS2");
-            user.setPunten(ds.child("C5y8MPEXHCVTyvscirCsUCTeQlS2").child("Punten").getValue(Punten.class).getPunten());
+            User user = new User();
+            Log.d(TAG, userID);
+            try {
+                user.setPunten(ds.child(userID).child("Punten").getValue(User.class).getPunten());
+                newValue = user.getPunten();
+            } catch (Exception e){
+                Log.d(TAG, e.getMessage());
+            }
             Log.d(TAG, String.valueOf(user.getPunten()));
 
 

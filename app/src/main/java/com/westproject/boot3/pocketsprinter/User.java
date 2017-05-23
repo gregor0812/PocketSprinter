@@ -4,7 +4,7 @@ package com.westproject.boot3.pocketsprinter;
  * Created by Delug on 21/05/2017.
  */
 
-public class Punten {
+public class User {
     private int punten;
 
 
@@ -16,7 +16,7 @@ public class Punten {
         this.punten = punten;
     }
 
-    public Punten() {
+    public User() {
 
 
     }

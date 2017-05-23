@@ -82,7 +82,7 @@ public class loginActivity extends AppCompatActivity implements
                 break;
             case R.id.to_menu_button:
                 Log.d(TAG, "onClick case to_menu_button started.");
-                Intent intent = new Intent(loginActivity.this, menuActivity.class);
+                Intent intent = new Intent(loginActivity.this, runningActivity.class);
                 startActivity(intent);
         }
     }
