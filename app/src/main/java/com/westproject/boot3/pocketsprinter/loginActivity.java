@@ -148,7 +148,7 @@ public class loginActivity extends AppCompatActivity implements
                             Log.d(TAG, "SignInWithCredential:Success");
                             FirebaseUser user = mAuth.getCurrentUser();
                             updateUI(user);
-                            Intent intent = new Intent(loginActivity.this, menuActivity.class);
+                            Intent intent = new Intent(loginActivity.this, runningActivity.class);
                             startActivity(intent);
                             userUID = user.getUid();
 
