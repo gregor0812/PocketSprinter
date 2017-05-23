@@ -52,7 +52,7 @@ public class runningActivity extends AppCompatActivity implements SensorEventLis
      * It extends the application and handles any uncaught exception by sending a full crash log
      * to Mikey0812@gmail.com
      */
-    private static final String WORKOUT_IDX = "com.westproject.boot3.pocketsprinter";
+    private static final String SAVE_PROGRESS = "com.westproject.boot3.pocketsprinter";
     private static final String TAG = "runningActivity";
 
     private runningTimer runningTimer;
@@ -137,7 +137,7 @@ public class runningActivity extends AppCompatActivity implements SensorEventLis
         };
 
         currentWorkoutSet = Challenge.loadWorkouts(this);
-        workoutCatalog = getPreferences(MODE_PRIVATE).getInt(WORKOUT_IDX, 0);
+        workoutCatalog = getPreferences(MODE_PRIVATE).getInt(SAVE_PROGRESS, 0);
         setUpCurrentWorkout();
     }
 
@@ -216,7 +216,7 @@ public class runningActivity extends AppCompatActivity implements SensorEventLis
 
     //Method used to save progress to the preferences.
     private void saveWorkoutProgress(int idx) {
-        getPreferences(MODE_PRIVATE).edit().putInt(WORKOUT_IDX, idx).apply();
+        getPreferences(MODE_PRIVATE).edit().putInt(SAVE_PROGRESS, idx).apply();
     }
 
 

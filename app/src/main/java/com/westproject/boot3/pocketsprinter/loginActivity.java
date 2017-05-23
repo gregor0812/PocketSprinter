@@ -129,7 +129,7 @@ public class loginActivity extends AppCompatActivity implements
         if (user != null) {
             SignInButton loginBtn= (SignInButton) findViewById(R.id.sign_in_button);
             loginBtn.setVisibility(View.GONE);
-            findViewById(R.id.to_menu_button).setVisibility(View.VISIBLE);
+        //    findViewById(R.id.to_menu_button).setVisibility(View.VISIBLE);
         } else {
             findViewById(R.id.sign_in_button).setVisibility(View.VISIBLE);
             findViewById(R.id.to_menu_button).setVisibility(View.GONE);
